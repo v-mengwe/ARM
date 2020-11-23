@@ -1,0 +1,128 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westus"
+        },
+        "virtualMachineName": {
+            "value": "samplevm"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "myself"
+        },
+        "virtualNetworkName": {
+            "value": "newresourcegroup-vnet"
+        },
+        "networkInterfaceName": {
+            "value": "samplevm818"
+        },
+        "backupFabricName": {
+            "value": "Azure"
+        },
+        "backupVaultName": {
+            "value": "vault105"
+        },
+        "backupVaultRGIsNew": {
+            "value": false
+        },
+        "backupVaultRGName": {
+            "value": "cleanupservice"
+        },
+        "backupPolicyName": {
+            "value": "DailyPolicy"
+        },
+        "backupPolicySchedule": {
+            "value": {
+                "schedulePolicyType": "SimpleSchedulePolicy",
+                "scheduleRunFrequency": "Daily",
+                "scheduleRunDays": [
+                    "Sunday"
+                ],
+                "scheduleRunTimes": [
+                    "2018-03-05T18:00:00.000Z"
+                ]
+            }
+        },
+        "backupPolicyRetention": {
+            "value": {
+                "retentionPolicyType": "LongTermRetentionPolicy",
+                "dailySchedule": {
+                    "retentionTimes": [
+                        "2018-03-05T18:00:00.000Z"
+                    ],
+                    "retentionDuration": {
+                        "count": 180,
+                        "durationType": "Days"
+                    }
+                }
+            }
+        },
+        "backupPolicyTimeZone": {
+            "value": "UTC"
+        },
+        "backupItemName": {
+            "value": "vm;iaasvmcontainerv2;newresourcegroup;samplevm"
+        },
+        "backupContainerName": {
+            "value": "iaasvmcontainer;iaasvmcontainerv2;newresourcegroup;samplevm"
+        },
+        "networkSecurityGroupName": {
+            "value": "samplevm-nsg"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "availabilitySetName": {
+            "value": "availabilityset1"
+        },
+        "availabilitySetPlatformFaultDomainCount": {
+            "value": "2"
+        },
+        "availabilitySetPlatformUpdateDomainCount": {
+            "value": "7"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "newresourcegroupdiag870"
+        },
+        "diagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "Microsoft.Storage/storageAccounts/newresourcegroupdiag870"
+        },
+        "addressPrefix": {
+            "value": "10.0.0.0/24"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "subnetPrefix": {
+            "value": "10.0.0.0/24"
+        },
+        "publicIpAddressName": {
+            "value": "samplevm-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "GMT Standard Time"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Disabled"
+        }
+    }
+}
